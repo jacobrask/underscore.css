@@ -1,0 +1,77 @@
+/** Forms
+==========================================================================
+IE8 might need extra styles for colors, since `hsl` is used here.
+
+    <form class="_ _width-1-2">
+      <fieldset>
+        <legend>Example form</legend>
+        <label>Blarf</label>
+        <input class="_input _margin-b">
+      <button type="submit" class="_button _right">Send</button>
+    </form>
+*/
+
+
+/** Inputs
+----------------------------------------------------------------------- */
+
+/** Inputs which look and function like normal text inputs. Are set to full
+width, control it with width-classes.
+
+    <span class="_input">Text</span>
+    <input class="_input" type="text" value="Text">
+    <input class="_input" type="email" value="email@example.com">
+    <input class="_input" type="password" value="password">
+    <input class="_input" type="tel" value="0046-12345">
+    <input class="_input" type="url" value="http://">
+    <textarea class="_input">Text area</textarea>
+*/
+
+/** Inputs with extra UI controls in some browsers.
+
+    <select class="_control"><option>Option</select>
+    <input type="color">
+    <input class="_control" type="number">
+    <input class="_control" type="date">
+    <input class="_control" type="datetime">
+    <input class="_control" type="datetime-local">
+    <input class="_control" type="month">
+    <input class="_control" type="week">
+    <input class="_control" type="time">
+*/
+
+._control,
+._input {
+    display: inline-block;
+    /* Most inputs default to `content-box`, but `border-box` is a more useful
+       default to avoid overflowing containers. */
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: .35em .5em;
+    vertical-align: middle;
+
+    font-family: inherit;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.2;
+
+    color: inherit;
+}
+
+._input {
+    width: 100%;
+
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 0 hsla(0, 0%, 0%, .1);
+    
+    -webkit-appearance: textfield;
+}
+textarea._input {
+    max-height: 5em;
+    /* Remove default vertical scrollbar in IE 8/9. */
+    overflow: auto;
+}

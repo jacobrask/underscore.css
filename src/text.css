@@ -1,0 +1,16 @@
+/* Text styles
+========================================================================== */
+
+._muted {
+    opacity: .75;
+}
+._b { font-weight: bold; }
+._i { font-style: italic; }
+
+._size-xxl { font-size: 3.815em; }
+._size-xl  { font-size: 2.442em; }
+._size-l   { font-size: 1.953em; }
+._size-m   { font-size: 1.25em;  }
+._size-s   { font-size: 1em;     }
+._size-xs  { font-size: 0.8em;   }
+._size-xxs { font-size: 0.64;    }
