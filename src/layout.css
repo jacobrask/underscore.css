@@ -1,9 +1,9 @@
 /** Layout
 ==========================================================================
-Layout helper classes. */
+Layout helper classes.
 
 
-/** Box model
+Box model
 --------------------------------------------------------------------------
 Change the box model of an element and its descendants.
 
@@ -37,9 +37,8 @@ Change the box model of an element and its descendants.
       <p style="float:left">Don't clear after me.</p>
     </div>
     <p>Lorizzle ipsum dolizzle izzle amizzle, bling bling adipiscing you son of a bizzle.</p>
-*/
 
-/**
+
     <div style="background:cadetblue" class="_cf">
       <p style="float:left">Do clear after me.</p>
     </div>
@@ -58,7 +57,9 @@ Change the box model of an element and its descendants.
 /** Positioning
 -------------------------------------------------------------------------- */
 
-/**    <p class="_center" style="width:50%;background:hotpink">Centered</p> */
+/**
+    <p class="_center" style="width:50%;background:hotpink">Centered</p>
+ */
 ._center {
     margin-right: auto;
     margin-left: auto;
@@ -75,17 +76,14 @@ Change the box model of an element and its descendants.
     float: left;
 }
 
-/** New block formatting context. */
-._nbfc {
-    overflow: hidden;
-}
-
-/** New positioning context for absolutely positioned children and JavaScript
+/* New positioning context for absolutely positioned children and JavaScript
 `offset*` properties. */
 ._noc {
     position: relative;
 }
 
+/* Force elements to the top right of first positioned parent.
+These, `noc` and `nbfc` might need better names. */
 ._top-force, ._right-force, ._bottom-force, ._left-force, ._all-force {
     position: absolute;
 }
@@ -116,11 +114,11 @@ Change the box model of an element and its descendants.
 
 /** Widths
 --------------------------------------------------------------------------
-These classes emove horizontal margins and makes width calculation
+These classes remove horizontal margins and makes width calculation
 disregard any padding. */
 
 ._width-1-1,
-._width-1-2, ._width-1-2,
+._width-1-2, ._width-2-2,
 ._width-1-3, ._width-2-3, ._width-3-3,
 ._width-1-4, ._width-2-4, ._width-3-4, ._width-4-4 {
     -moz-box-sizing: border-box;
