@@ -36,13 +36,15 @@ Change the box model of an element and its descendants.
     <div style="background:cadetblue">
       <p style="float:left">Don't clear after me.</p>
     </div>
-    <p>Lorizzle ipsum dolizzle izzle amizzle, bling bling adipiscing you son of a bizzle.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+       posuere egestas pharetra.</p>
 
 
     <div style="background:cadetblue" class="_cf">
       <p style="float:left">Do clear after me.</p>
     </div>
-    <p>Lorizzle ipsum dolizzle izzle amizzle, bling bling adipiscing you son of a bizzle.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+       posuere egestas pharetra.</p>
 */
 
 ._cf:before, ._cf:after {
@@ -51,6 +53,28 @@ Change the box model of an element and its descendants.
 }
 ._cf:after {
     clear: both;
+}
+
+
+/** Display
+--------------------------------------------------------------------------
+Easily control display properties. */
+
+._block {
+  display: block !important;
+}
+._inline {
+  display: inline !important;
+}
+._inline-block {
+  display: inline-block !important;
+}
+._is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+._is-invisible {
+  visibility: hidden !important;
 }
 
 
@@ -78,38 +102,37 @@ Change the box model of an element and its descendants.
 
 /* New positioning context for absolutely positioned children and JavaScript
 `offset*` properties. */
-._noc {
+._new-pos {
     position: relative;
 }
 
-/* Force elements to the top right of first positioned parent.
-These, `noc` and `nbfc` might need better names. */
-._top-force, ._right-force, ._bottom-force, ._left-force, ._all-force {
+/* Force elements to an edge of first positioned parent. */
+._force-t, ._force-r, ._force-b, ._force-l,
+._force-h, ._force-v, ._force-all {
     position: absolute;
 }
 /**
-    <p class="_top-force _right-force" style="background:hotpink">Force to top right</p>
+    <p class="_force-t, _force-r" style="background:hotpink">Force to top right</p>
 */
 
-._top-force, ._all-force    { top:    0; }
-._right-force, ._all-force  { right:  0; }
-._bottom-force, ._all-force { bottom: 0; }
-._left-force, ._all-force   { left:   0; }
+._force-t, ._force-v, ._force-all { top:    0; }
+._force-r, ._force-h, ._force-all { right:  0; }
+._force-b, ._force-v, ._force-all { bottom: 0; }
+._force-l, ._force-h, ._force-all { right:  0; }
 
 
 /** Whitespace
 ------------------------------------------------------------------------- */
 
-._padding, ._padding-v, ._padding-t { padding-top:    1em !important; }
-._padding, ._padding-h, ._padding-r { padding-right:  1em !important; }
-._padding, ._padding-v, ._padding-b { padding-bottom: 1em !important; }
-._padding, ._padding-h, ._padding-l { padding-left:   1em !important; }
+._padding, ._padding-v, ._padding-t { padding-top:    1em; }
+._padding, ._padding-h, ._padding-r { padding-right:  1em; }
+._padding, ._padding-v, ._padding-b { padding-bottom: 1em; }
+._padding, ._padding-h, ._padding-l { padding-left:   1em; }
 
-._margin, ._margin-v, ._margin-t { margin-top:    1em !important; }
-._margin, ._margin-h, ._margin-r { margin-right:  1em !important; }
-._margin, ._margin-v, ._margin-b { margin-bottom: 1em !important; }
-._margin, ._margin-h, ._margin-l { margin-left:   1em !important; }
-
+._margin, ._margin-v, ._margin-t { margin-top:    1em; }
+._margin, ._margin-h, ._margin-r { margin-right:  1em; }
+._margin, ._margin-v, ._margin-b { margin-bottom: 1em; }
+._margin, ._margin-h, ._margin-l { margin-left:   1em; }
 
 
 /** Widths
