@@ -5,12 +5,11 @@ sometimes you cannot determine semantics (such as with WYSIWYG output),
 sometimes there are no suitable elements, and sometimes it's just not
 convenient. */
 
-._text-bold, ._b   { font-weight: bold; }
+._text-bold,   ._b { font-weight: bold; }
 ._text-italic, ._i { font-style: italic; }
 ._text-strike, ._s { text-decoration: line-through; }
-
 /* Equivalent of `._ code', `._ kbd`, `._ samp` and `._ var`. */
-._text-mono {
+._text-mono, ._tt {
     font-style: monospace;
     font-size: 0.9em;
 }
@@ -22,13 +21,12 @@ convenient. */
 /* Instead of abusing default heading sizes, use semantic HTML and apply a
 size class to it. These sizes follow a 1:1.25 ratio (skipping some steps).
 */
-._size-xxl { font-size: 3.815em; }
-._size-xl  { font-size: 2.441em; }
-._size-l   { font-size: 1.953em; }
-._size-m   { font-size: 1.25em;  }
-._size-s   { font-size: 1em;     }
-._size-xs  { font-size: 0.8em;   }
-._size-xxs { font-size: 0.64em;  }
+._size-xxl { font-size: 2.441em; }
+._size-xl  { font-size: 1.953em; }
+._size-l   { font-size: 1.25em;  }
+._size-m   { font-size: 1em;     }
+._size-s   { font-size: 0.8em;   }
+._size-xs  { font-size: 0.64em;  }
 
 ._muted-strong { opacity: 0.6;  }
 ._muted        { opacity: 0.75; }

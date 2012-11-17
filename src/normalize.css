@@ -45,7 +45,7 @@ Set default styles in IE 8/9 and other older browsers. */
     line-height: 1.3;
 }
 
-/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+/* Prevent `sub` and `sup` affecting `line-height`. */
 ._ sub, ._ sup {
     font-size: 75%;
     line-height: 0;
@@ -55,6 +55,7 @@ Set default styles in IE 8/9 and other older browsers. */
 ._ sup { top: -0.5em; }
 ._ sub { bottom: -0.25em; }
 
+/* Not all abbreviations are initialisms, don't uppercase by default. */
 ._ abbr {
     font-style: normal;
     text-transform: none;
@@ -63,6 +64,7 @@ Set default styles in IE 8/9 and other older browsers. */
     cursor: help;
     border-bottom: 1px dotted;
 }
+
 
 /** Embedded content
 ------------------------------------------------------------------------ */

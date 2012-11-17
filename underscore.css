@@ -11,7 +11,6 @@ Most styles are instead normalized using more specific classes. */
 ._ body, body._ {
     /* Don't allow long words to cause horizontal scrollbars. */
     word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
 
@@ -48,7 +47,7 @@ Set default styles in IE 8/9 and other older browsers. */
     line-height: 1.3;
 }
 
-/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+/* Prevent `sub` and `sup` affecting `line-height`. */
 ._ sub, ._ sup {
     font-size: 75%;
     line-height: 0;
@@ -58,6 +57,7 @@ Set default styles in IE 8/9 and other older browsers. */
 ._ sup { top: -0.5em; }
 ._ sub { bottom: -0.25em; }
 
+/* Not all abbreviations are initialisms, don't uppercase by default. */
 ._ abbr {
     font-style: normal;
     text-transform: none;
@@ -66,6 +66,7 @@ Set default styles in IE 8/9 and other older browsers. */
     cursor: help;
     border-bottom: 1px dotted;
 }
+
 
 /** Embedded content
 ------------------------------------------------------------------------ */
@@ -222,12 +223,8 @@ See equivalent classes for text alignment in the text component. */
     <p class="_right" style="background:hotpink">Floated right</p>
     <p class="left" style="background:hotpink">Floated left</p>
 */
-._right {
-    float: right;
-}
-._left {
-    float: left;
-}
+._right { float: right; }
+._left  { float: left; }
 
 /* New positioning context for absolutely positioned children and
 JavaScript `offset*` properties. */
@@ -249,7 +246,7 @@ JavaScript `offset*` properties. */
 ._force-t, ._force-v, ._force-all { top:    0; }
 ._force-r, ._force-h, ._force-all { right:  0; }
 ._force-b, ._force-v, ._force-all { bottom: 0; }
-._force-l, ._force-h, ._force-all { right:  0; }
+._force-l, ._force-h, ._force-all { left:   0; }
 
 
 /** Reset
@@ -293,7 +290,7 @@ elements such as menus and toolbars.
 
 /** Widths
 ---------------------------------------------------------------------------
-These classes remove horizontal margins and makes width calculation
+These classes remove horizontal margins and make width calculation
 disregard any padding. */
 
 ._width-1-1,
@@ -320,12 +317,11 @@ sometimes you cannot determine semantics (such as with WYSIWYG output),
 sometimes there are no suitable elements, and sometimes it's just not
 convenient. */
 
-._text-bold, ._b   { font-weight: bold; }
+._text-bold,   ._b { font-weight: bold; }
 ._text-italic, ._i { font-style: italic; }
 ._text-strike, ._s { text-decoration: line-through; }
-
 /* Equivalent of `._ code', `._ kbd`, `._ samp` and `._ var`. */
-._text-mono {
+._text-mono, ._tt {
     font-style: monospace;
     font-size: 0.9em;
 }
@@ -337,13 +333,12 @@ convenient. */
 /* Instead of abusing default heading sizes, use semantic HTML and apply a
 size class to it. These sizes follow a 1:1.25 ratio (skipping some steps).
 */
-._size-xxl { font-size: 3.815em; }
-._size-xl  { font-size: 2.441em; }
-._size-l   { font-size: 1.953em; }
-._size-m   { font-size: 1.25em;  }
-._size-s   { font-size: 1em;     }
-._size-xs  { font-size: 0.8em;   }
-._size-xxs { font-size: 0.64em;  }
+._size-xxl { font-size: 2.441em; }
+._size-xl  { font-size: 1.953em; }
+._size-l   { font-size: 1.25em;  }
+._size-m   { font-size: 1em;     }
+._size-s   { font-size: 0.8em;   }
+._size-xs  { font-size: 0.64em;  }
 
 ._muted-strong { opacity: 0.6;  }
 ._muted        { opacity: 0.75; }

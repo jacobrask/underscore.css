@@ -94,12 +94,8 @@ See equivalent classes for text alignment in the text component. */
     <p class="_right" style="background:hotpink">Floated right</p>
     <p class="left" style="background:hotpink">Floated left</p>
 */
-._right {
-    float: right;
-}
-._left {
-    float: left;
-}
+._right { float: right; }
+._left  { float: left; }
 
 /* New positioning context for absolutely positioned children and
 JavaScript `offset*` properties. */
@@ -121,7 +117,7 @@ JavaScript `offset*` properties. */
 ._force-t, ._force-v, ._force-all { top:    0; }
 ._force-r, ._force-h, ._force-all { right:  0; }
 ._force-b, ._force-v, ._force-all { bottom: 0; }
-._force-l, ._force-h, ._force-all { right:  0; }
+._force-l, ._force-h, ._force-all { left:   0; }
 
 
 /** Reset
@@ -165,7 +161,7 @@ elements such as menus and toolbars.
 
 /** Widths
 ---------------------------------------------------------------------------
-These classes remove horizontal margins and makes width calculation
+These classes remove horizontal margins and make width calculation
 disregard any padding. */
 
 ._width-1-1,
