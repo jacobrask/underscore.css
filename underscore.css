@@ -17,11 +17,505 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE. */
+THE SOFTWARE.
+*/
 
-@import 'src/normalize.css';
-@import 'src/buttons.css';
-@import 'src/forms.css';
-@import 'src/helpers.css';
-@import 'src/layout.css';
-@import 'src/text.css';
+
+/** Normalize 
+===========================================================================
+Styles defined here should always be prefixed with the `_` class.
+Remember that this will increase the specificity of a selector, so only
+bug fixes or styles that are *very* generic should be added here.
+
+Most styles are instead normalized using more specific classes. */
+
+._ body, body._ {
+    /* Don't allow long words to cause horizontal scrollbars. */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+/** HTML5 elements
+---------------------------------------------------------------------------
+Set default styles in IE 8/9 and other older browsers. */
+
+._ article, ._ aside, ._ details, ._ figcaption, ._ figure, ._ footer,
+._ header, ._ hgroup, ._ nav, ._ section, ._ summary {
+    display: block;
+}
+._ audio, ._ canvas, ._ video {
+    display: inline-block;
+}
+._ [hidden] {
+    display: none !important;
+}
+
+
+/** Typography
+------------------------------------------------------------------------ */
+
+._ code, ._ kbd, ._ pre, ._ samp {
+    /* `font-family` set oddly in Safari 5 and Chrome. */
+    font-family: monospace;
+}
+/* Set consistent wrap properties on preformatted text. */
+._ pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+._ sub, ._ sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+._ sup { top: -0.5em; }
+._ sub { bottom: -0.25em; }
+
+
+/** Embedded content
+------------------------------------------------------------------------ */
+
+._ img {
+    /* Remove border when inside `a` element in IE 8/9. */
+    border: 0;
+    /* Avoid horizontal scrollbars from wide images. Beware of
+       [disappearing images in IE 8](http://www.456bereastreet.com/archive/201202/using_max-width_on_images_can_make_them_disappear_in_ie8/). */
+    max-width: 100%;
+    /* Remove the gap between images and their container. */
+    vertical-align: middle;
+}
+._ svg:not(:root) {
+    /* overflow displayed oddly in IE 9. */
+    overflow: hidden;
+}
+
+
+/** Forms
+------------------------------------------------------------------------ */
+
+._ fieldset,
+._ legend {
+    /* Reset to allow usage without assuming styles. */
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+._ input[type="checkbox"], input[type="radio"] {
+    /* Remove excess padding in IE 8/9. */
+    padding: 0;
+}
+
+
+/** Miscellaneous
+------------------------------------------------------------------------ */
+
+/* Remove most spacing between table cells. */
+._ table {
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* `unselectable` is the IE way of specifying that an element's text cannot
+be selected. Make sure other browsers get the same behaviour when the
+attribute is used. */
+._ [unselectable="on"] {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+/** Layout
+===========================================================================
+Layout helper classes.
+
+
+Box model
+---------------------------------------------------------------------------
+Change the box model of an element and its descendants.
+
+    <div>
+      <div style="background:hotpink;width:50%;padding:20px">
+        Legacy content, relying on the default <code>content-box</code>
+      </div>
+    </div>
+
+    <div class="_boxmodel-border">
+      <div style="background:hotpink;width:50%;padding:20px">
+        New content, using <code>border-box</code>
+      </div>
+    </div>
+*/
+
+._boxmodel-border, ._boxmodel-border * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+._boxmodel-content, ._boxmodel-content * {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+
+/** Clearfix
+---------------------------------------------------------------------------
+
+    <div style="background:cadetblue">
+      <p style="float:left">Don't clear after me.</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+       posuere egestas pharetra.</p>
+
+
+    <div style="background:cadetblue" class="_cf">
+      <p style="float:left">Do clear after me.</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+       posuere egestas pharetra.</p>
+*/
+
+._cf:before, ._cf:after {
+    display: table;
+    content: " ";
+}
+._cf:after {
+    clear: both;
+}
+
+
+/** Display
+---------------------------------------------------------------------------
+Easy control of display properties. */
+
+._block {
+  display: block !important;
+}
+._inline {
+  display: inline !important;
+}
+._inline-block {
+  display: inline-block !important;
+}
+._is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+._is-invisible {
+  visibility: hidden !important;
+}
+
+
+/** Positioning
+------------------------------------------------------------------------ */
+
+/**
+    <p class="_center" style="width:50%;background:hotpink">Centered</p>
+ */
+._center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/**
+    <p class="_right" style="background:hotpink">Floated right</p>
+    <p class="left" style="background:hotpink">Floated left</p>
+*/
+._right {
+    float: right;
+}
+._left {
+    float: left;
+}
+
+/* New positioning context for absolutely positioned children and
+JavaScript `offset*` properties. */
+._new-pos {
+    position: relative;
+}
+
+/* Force elements to an edge of first positioned parent. */
+._force-t, ._force-r, ._force-b, ._force-l,
+._force-h, ._force-v, ._force-all {
+    position: absolute;
+}
+/**
+    <p class="_force-t, _force-r" style="background:hotpink">
+      Force to top right
+    </p>
+*/
+
+._force-t, ._force-v, ._force-all { top:    0; }
+._force-r, ._force-h, ._force-all { right:  0; }
+._force-b, ._force-v, ._force-all { bottom: 0; }
+._force-l, ._force-h, ._force-all { right:  0; }
+
+
+/** Reset
+---------------------------------------------------------------------------
+
+### User Interface elements
+
+Reset margins, paddings, link and list styles by adding the `ui` class to
+elements such as menus and toolbars.
+
+    <nav class="_ui">
+      <p>Paragraph
+      <ul>
+        <li>List
+        <li><a href="#">Link</a>
+      </ul>
+    </nav>
+*/
+
+._ui, ._ui * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/** Whitespace
+------------------------------------------------------------------------ */
+
+._padding, ._padding-v, ._padding-t { padding-top:    1em; }
+._padding, ._padding-h, ._padding-r { padding-right:  1em; }
+._padding, ._padding-v, ._padding-b { padding-bottom: 1em; }
+._padding, ._padding-h, ._padding-l { padding-left:   1em; }
+
+._margin, ._margin-v, ._margin-t { margin-top:    1em; }
+._margin, ._margin-h, ._margin-r { margin-right:  1em; }
+._margin, ._margin-v, ._margin-b { margin-bottom: 1em; }
+._margin, ._margin-h, ._margin-l { margin-left:   1em; }
+
+
+/** Widths
+---------------------------------------------------------------------------
+These classes remove horizontal margins and makes width calculation
+disregard any padding. */
+
+._width-1-1,
+._width-1-2, ._width-2-2,
+._width-1-3, ._width-2-3, ._width-3-3,
+._width-1-4, ._width-2-4, ._width-3-4, ._width-4-4 {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+}
+._width-1-2,
+._width-2-4 { width: 50%; }
+._width-1-3 { width: 33.33%; }
+._width-2-3 { width: 66.66%; }
+._width-3-4 { width: 75%; }
+
+
+
+/** Text styles
+======================================================================== */
+
+._muted-strong { opacity: 0.5;  }
+._muted        { opacity: 0.75; }
+._muted-subtle { opacity: 0.9;  }
+
+._b { font-weight: bold; }
+._i { font-style: italic; }
+
+._size-xxl { font-size: 3.815em; }
+._size-xl  { font-size: 2.442em; }
+._size-l   { font-size: 1.953em; }
+._size-m   { font-size: 1.25em;  }
+._size-s   { font-size: 1em;     }
+._size-xs  { font-size: 0.8em;   }
+._size-xxs { font-size: 0.64em;  }
+
+
+
+/** Buttons
+===========================================================================
+Button styles can be applied to anything by applying the `_button` class.
+As a convention, `button` elements should be used for actions and anchors
+(`a`) for navigation. For instance, "Download" should be a `button` while
+"recent activity" should be an anchor. */
+
+
+/** Core styles
+---------------------------------------------------------------------------
+
+    <button class="_button">button element</button>
+    <input type="submit" class="_button" value="input element">
+    <a href="#" class="_button">anchor element</a>
+    <span class="_button">span element</span>
+*/
+
+._button {
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.4em 1em;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    font-family: inherit;
+    font-size: 0.9em;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Remove inner padding and border from buttons in Firefox 4+. */
+._button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+/** States
+---------------------------------------------------------------------------
+
+    <button class="_button :hover">Hover</button>
+    <button class="_button :focus">Focus</button>
+    <button class="_button :active">Active</button>
+    <button class="_button" disabled>Disabled</button>
+*/
+
+._button:active,
+._button:focus,
+._button:hover {
+    text-decoration: none;
+    outline: 0;
+}
+._button._is-disabled,
+._button[disabled] {
+    cursor: default;
+    opacity: 0.75;
+}
+
+
+/**  Sizes
+---------------------------------------------------------------------------
+
+    <button class="_button _button-xsmall">Smallest</button>
+    <button class="_button _button-small">Small</button>
+    <button class="_button">Default</button>
+    <button class="_button _button-large">Large</button>
+    <button class="_button _button-xlarge">Largest</button>
+*/
+
+._button-xl {
+    /* slightly less padding to reduce height */
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: 1.2em;
+}
+._button-l {
+    font-size: 1.0em;
+}
+/* Default */
+._button-m {
+    font-size: 0.9em;
+}
+._button-s {
+    font-size: 0.72em;
+    font-weight: bold;
+}
+._button-xs {
+    font-size: 0.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+/** Forms
+==========================================================================
+Form layout is controlled by classes defined in the layout component.
+
+    <form class="_ _width-1-2">
+      <fieldset>
+        <legend>Example form</legend>
+        <label>Form label</label>
+        <input class="_input _margin-b">
+      <button type="submit" class="_button _right">Send</button>
+    </form>
+*/
+
+
+/** Inputs
+----------------------------------------------------------------------- */
+
+/** Inputs which look and function like normal text inputs. Are set to full
+width, control it with width-classes.
+
+    <span class="_input">Text</span>
+    <input class="_input" type="text" value="Text">
+    <input class="_input" type="email" value="email@example.com">
+    <input class="_input" type="password" value="password">
+    <input class="_input" type="tel" value="0046-12345">
+    <input class="_input" type="url" value="http://">
+    <textarea class="_input">Text area</textarea>
+*/
+
+/** Inputs with extra UI controls in some browsers.
+
+    <select class="_control"><option>Option</select>
+    <input type="color">
+    <input class="_control" type="number">
+    <input class="_control" type="date">
+    <input class="_control" type="datetime">
+    <input class="_control" type="datetime-local">
+    <input class="_control" type="month">
+    <input class="_control" type="week">
+    <input class="_control" type="time">
+*/
+
+._control,
+._input {
+    display: inline-block;
+    /* Most inputs default to `content-box`, but `border-box` is a more
+       useful default to avoid overflowing containers. */
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: .35em .5em;
+    vertical-align: middle;
+
+    font-family: inherit;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.2;
+    color: inherit;
+}
+
+._input {
+    width: 100%;
+    -webkit-appearance: textfield;
+}
+/* Reset default search input styles */
+._input[type="search"]::-webkit-search-cancel-button,
+._input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+textarea._input {
+    max-height: 5em;
+    /* Remove default vertical scrollbar in IE 8/9. */
+    overflow: auto;
+}
