@@ -32,15 +32,18 @@ Set default styles in IE 8/9 and other older browsers. */
 /** Typography
 ------------------------------------------------------------------------ */
 
-._ code, ._ kbd, ._ pre, ._ samp {
-    /* `font-family` set oddly in Safari 5 and Chrome. */
+/* Consistent font styling for inline monospace elements. */
+._ code, ._ kbd, ._ samp, ._ var {
     font-family: monospace;
+    font-size: 0.9em;
+    font-style: normal;
 }
-/* Set consistent wrap properties on preformatted text. */
 ._ pre {
+    font-family: monospace;
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
+    line-height: 1.3;
 }
 
 /* Prevent `sub` and `sup` affecting `line-height` in all browsers. */

@@ -1,17 +1,41 @@
 /** Text styles
-======================================================================== */
-
-._muted-strong { opacity: 0.5;  }
-._muted        { opacity: 0.75; }
-._muted-subtle { opacity: 0.9;  }
+===========================================================================
+You should always try to use the proper semantic HTML element, but
+sometimes you cannot determine semantics (such as with WYSIWYG output),
+sometimes there are no suitable elements, and sometimes it's just not
+convenient. */
 
 ._b { font-weight: bold; }
 ._i { font-style: italic; }
+._s { text-decoration: line-through; }
 
+/* Equivalent of `._ code', `._ kbd`, `._ samp` and `._ var`. */
+._tt {
+    font-style: monospace;
+    font-size: 0.9em;
+}
+
+/* Instead of abusing default heading sizes, use semantic HTML and apply a
+size class to it. These sizes follow a 1:1.25 ratio (skipping some steps).
+*/
 ._size-xxl { font-size: 3.815em; }
-._size-xl  { font-size: 2.442em; }
+._size-xl  { font-size: 2.441em; }
 ._size-l   { font-size: 1.953em; }
 ._size-m   { font-size: 1.25em;  }
 ._size-s   { font-size: 1em;     }
 ._size-xs  { font-size: 0.8em;   }
 ._size-xxs { font-size: 0.64em;  }
+
+._muted-strong { opacity: 0.6;  }
+._muted        { opacity: 0.75; }
+._muted-subtle { opacity: 0.9;  }
+
+
+/* Equivalent of `._ pre` */
+._pre {
+    font-family: monospace;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
