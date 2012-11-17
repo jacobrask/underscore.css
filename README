@@ -1,12 +1,13 @@
 Underscore.css is a small but powerful CSS utility belt library.
 
 It is not a framework to help you bootstrap a new site, but rather a
-collection of often used code snippets, generic enough to be used with many
-different types of designs.
+collection of often used code snippets, generic enough to be used with
+many different types of designs. Underscore.css is perfect for refactoring
+legacy CSS, and can replace many hundreds of lines of existing code.
 
-Including Underscore.css on your site will not alter its layout until you add
-Underscore.css classes to your markup. To avoid conflicts with existing CSS,
-all classes are prefixed with `_`.
+Including Underscore.css on your site will not alter its layout until you
+add Underscore.css classes to your markup. To avoid conflicts with
+existing CSS, all classes are prefixed with `_`.
 
-Underscore.css is inspired by several of Nicolas Gallagher's philosophies and
+Underscore.css is inspired by several of Nicolas Gallagher's CSS ideas and
 projects, like [Normalize](http://necolas.github.com/normalize.css).

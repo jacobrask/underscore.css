@@ -1,6 +1,6 @@
 /** Normalize 
 ===========================================================================
-Styles defined in this file should always be prefixed with the `_` class.
+Styles defined here should always be prefixed with the `_` class.
 Remember that this will increase the specificity of a selector, so only
 bug fixes or styles that are *very* generic should be added here.
 

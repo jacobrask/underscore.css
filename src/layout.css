@@ -1,10 +1,10 @@
 /** Layout
-==========================================================================
+===========================================================================
 Layout helper classes.
 
 
 Box model
---------------------------------------------------------------------------
+---------------------------------------------------------------------------
 Change the box model of an element and its descendants.
 
     <div>
@@ -31,7 +31,7 @@ Change the box model of an element and its descendants.
 
 
 /** Clearfix
---------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
     <div style="background:cadetblue">
       <p style="float:left">Don't clear after me.</p>
@@ -57,8 +57,8 @@ Change the box model of an element and its descendants.
 
 
 /** Display
---------------------------------------------------------------------------
-Easily control display properties. */
+---------------------------------------------------------------------------
+Easy control of display properties. */
 
 ._block {
   display: block !important;
@@ -79,7 +79,7 @@ Easily control display properties. */
 
 
 /** Positioning
--------------------------------------------------------------------------- */
+------------------------------------------------------------------------ */
 
 /**
     <p class="_center" style="width:50%;background:hotpink">Centered</p>
@@ -100,8 +100,8 @@ Easily control display properties. */
     float: left;
 }
 
-/* New positioning context for absolutely positioned children and JavaScript
-`offset*` properties. */
+/* New positioning context for absolutely positioned children and
+JavaScript `offset*` properties. */
 ._new-pos {
     position: relative;
 }
@@ -112,7 +112,9 @@ Easily control display properties. */
     position: absolute;
 }
 /**
-    <p class="_force-t, _force-r" style="background:hotpink">Force to top right</p>
+    <p class="_force-t, _force-r" style="background:hotpink">
+      Force to top right
+    </p>
 */
 
 ._force-t, ._force-v, ._force-all { top:    0; }
@@ -122,7 +124,7 @@ Easily control display properties. */
 
 
 /** Reset
---------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
 ### User Interface elements
 
@@ -147,7 +149,7 @@ elements such as menus and toolbars.
 
 
 /** Whitespace
-------------------------------------------------------------------------- */
+------------------------------------------------------------------------ */
 
 ._padding, ._padding-v, ._padding-t { padding-top:    1em; }
 ._padding, ._padding-h, ._padding-r { padding-right:  1em; }
@@ -161,7 +163,7 @@ elements such as menus and toolbars.
 
 
 /** Widths
---------------------------------------------------------------------------
+---------------------------------------------------------------------------
 These classes remove horizontal margins and makes width calculation
 disregard any padding. */
 
