@@ -1,6 +1,8 @@
 all: build
 
-build: src/*.css
+build: underscore.css
+
+underscore.css: src/
 	@echo '/*! Underscore.css v0.0.1 (MIT Licensed) */\n' > underscore.css
 	@cat src/normalize.css >> underscore.css
 	@echo '\n\n' >> underscore.css;

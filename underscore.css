@@ -498,16 +498,15 @@ Form layout is controlled by classes defined in the layout component.
 /** Inputs
 ----------------------------------------------------------------------- */
 
-/** Inputs which look and function like normal text inputs. Are set to full
-width, control it with width-classes.
+/** Inputs which look and function like normal text inputs.
 
-    <span class="_input">Text</span>
     <input class="_input" type="text" value="Text">
     <input class="_input" type="email" value="email@example.com">
     <input class="_input" type="password" value="password">
     <input class="_input" type="tel" value="0046-12345">
     <input class="_input" type="url" value="http://">
     <textarea class="_input">Text area</textarea>
+    <span class="_input">Uneditable input</span>
 */
 
 /** Inputs with extra UI controls in some browsers.
