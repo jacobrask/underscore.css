@@ -9,7 +9,6 @@ Most styles are instead normalized using more specific classes. */
 ._ body, body._ {
     /* Don't allow long words to cause horizontal scrollbars. */
     word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
 
