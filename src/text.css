@@ -5,15 +5,19 @@ sometimes you cannot determine semantics (such as with WYSIWYG output),
 sometimes there are no suitable elements, and sometimes it's just not
 convenient. */
 
-._b { font-weight: bold; }
-._i { font-style: italic; }
-._s { text-decoration: line-through; }
+._text-bold, ._b   { font-weight: bold; }
+._text-italic, ._i { font-style: italic; }
+._text-strike, ._s { text-decoration: line-through; }
 
 /* Equivalent of `._ code', `._ kbd`, `._ samp` and `._ var`. */
-._tt {
+._text-mono {
     font-style: monospace;
     font-size: 0.9em;
 }
+
+._text-upper { text-transform: uppercase; }
+._text-lower { text-transform: lowercase; }
+
 
 /* Instead of abusing default heading sizes, use semantic HTML and apply a
 size class to it. These sizes follow a 1:1.25 ratio (skipping some steps).
@@ -38,4 +42,27 @@ size class to it. These sizes follow a 1:1.25 ratio (skipping some steps).
     white-space: pre-wrap;
     word-wrap: break-word;
     line-height: 1.3;
+    /* Enable scroll if `max-height` is set */
+    overflow-y: auto;
+}
+
+/* Text-alignment. See equivalent classes for non-text alignment in the
+layout component. */
+._text-center { text-align: center; }
+._text-left   { text-align: left; }
+._text-right  { text-align: right; }
+
+
+/* Prevent text from wrapping onto multiple lines, and truncate with an
+ellipsis. */
+._truncate {
+    max-width: 100%;
+    /* Make sure that max-width really is 100% */
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* Override IE 8/9 `break-word` inheritance */
+    word-wrap: normal;
 }

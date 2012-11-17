@@ -56,6 +56,14 @@ Set default styles in IE 8/9 and other older browsers. */
 ._ sup { top: -0.5em; }
 ._ sub { bottom: -0.25em; }
 
+._ abbr {
+    font-style: normal;
+    text-transform: none;
+}
+._ abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted;
+}
 
 /** Embedded content
 ------------------------------------------------------------------------ */
@@ -101,6 +109,7 @@ Set default styles in IE 8/9 and other older browsers. */
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 
 /* `unselectable` is the IE way of specifying that an element's text cannot
 be selected. Make sure other browsers get the same behaviour when the
