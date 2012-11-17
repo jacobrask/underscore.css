@@ -1,5 +1,5 @@
 /** Buttons
-==========================================================================
+===========================================================================
 Button styles can be applied to anything by applying the `_button` class.
 As a convention, `button` elements should be used for actions and anchors
 (`a`) for navigation. For instance, "Download" should be a `button` while
@@ -7,7 +7,7 @@ As a convention, `button` elements should be used for actions and anchors
 
 
 /** Core styles
---------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
     <button class="_button">button element</button>
     <input type="submit" class="_button" value="input element">
@@ -30,6 +30,11 @@ As a convention, `button` elements should be used for actions and anchors
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 /* Remove inner padding and border from buttons in Firefox 4+. */
 ._button::-moz-focus-inner {
@@ -39,7 +44,7 @@ As a convention, `button` elements should be used for actions and anchors
 
 
 /** States
---------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
     <button class="_button :hover">Hover</button>
     <button class="_button :focus">Focus</button>
@@ -61,7 +66,7 @@ As a convention, `button` elements should be used for actions and anchors
 
 
 /**  Sizes
---------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
     <button class="_button _button-xsmall">Smallest</button>
     <button class="_button _button-small">Small</button>

@@ -1,10 +1,10 @@
 /** Normalize 
-============================================================================
+===========================================================================
 Styles defined in this file should always be prefixed with the `_` class.
 Remember that this will increase the specificity of a selector, so only
 bug fixes or styles that are *very* generic should be added here.
 
-Most styles are instead normalized using their respective classes. */
+Most styles are instead normalized using more specific classes. */
 
 ._ body, body._ {
     /* Don't allow long words to cause horizontal scrollbars. */
@@ -14,7 +14,7 @@ Most styles are instead normalized using their respective classes. */
 
 
 /** HTML5 elements
-----------------------------------------------------------------------------
+---------------------------------------------------------------------------
 Set default styles in IE 8/9 and other older browsers. */
 
 ._ article, ._ aside, ._ details, ._ figcaption, ._ figure, ._ footer,
@@ -25,12 +25,12 @@ Set default styles in IE 8/9 and other older browsers. */
     display: inline-block;
 }
 ._ [hidden] {
-    display: none;
+    display: none !important;
 }
 
 
 /** Typography
----------------------------------------------------------------------------- */
+------------------------------------------------------------------------ */
 
 ._ code, ._ kbd, ._ pre, ._ samp {
     /* `font-family` set oddly in Safari 5 and Chrome. */
@@ -55,7 +55,7 @@ Set default styles in IE 8/9 and other older browsers. */
 
 
 /** Embedded content
----------------------------------------------------------------------------- */
+------------------------------------------------------------------------ */
 
 ._ img {
     /* Remove border when inside `a` element in IE 8/9. */
@@ -72,9 +72,8 @@ Set default styles in IE 8/9 and other older browsers. */
 }
 
 
-
 /** Forms
----------------------------------------------------------------------------- */
+------------------------------------------------------------------------ */
 
 ._ fieldset,
 ._ legend {
@@ -89,19 +88,9 @@ Set default styles in IE 8/9 and other older browsers. */
     padding: 0;
 }
 
- /* Reset all search input styles in webkit */
-._ input[type="search"] {
-    -webkit-appearance: textfield;
-}
-._ input[type="search"]::-webkit-search-cancel-button,
-._ input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
-
-
 
 /** Miscellaneous
----------------------------------------------------------------------------- */
+------------------------------------------------------------------------ */
 
 /* Remove most spacing between table cells. */
 ._ table {
@@ -110,8 +99,9 @@ Set default styles in IE 8/9 and other older browsers. */
     border-spacing: 0;
 }
 
-/* `unselectable` is the IE way of specifying that an element's text cannot be
-selected. Make sure other browsers get the same treatment. */
+/* `unselectable` is the IE way of specifying that an element's text cannot
+be selected. Make sure other browsers get the same behaviour when the
+attribute is used. */
 ._ [unselectable="on"] {
     -webkit-user-select: none;
     -moz-user-select: none;
