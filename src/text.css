@@ -1,9 +1,10 @@
 /** Text styles
 ======================================================================== */
 
-._muted {
-    opacity: .75;
-}
+._muted-strong { opacity: 0.5;  }
+._muted        { opacity: 0.75; }
+._muted-subtle { opacity: 0.9;  }
+
 ._b { font-weight: bold; }
 ._i { font-style: italic; }
 
@@ -13,4 +14,4 @@
 ._size-m   { font-size: 1.25em;  }
 ._size-s   { font-size: 1em;     }
 ._size-xs  { font-size: 0.8em;   }
-._size-xxs { font-size: 0.64;    }
+._size-xxs { font-size: 0.64em;  }
