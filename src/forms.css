@@ -1,11 +1,11 @@
 /** Forms
 ==========================================================================
-IE8 might need extra styles for colors, since `hsl` is used here.
+Form layout is controlled by classes defined in the layout component.
 
     <form class="_ _width-1-2">
       <fieldset>
         <legend>Example form</legend>
-        <label>Blarf</label>
+        <label>Form label</label>
         <input class="_input _margin-b">
       <button type="submit" class="_button _right">Send</button>
     </form>
@@ -43,8 +43,8 @@ width, control it with width-classes.
 ._control,
 ._input {
     display: inline-block;
-    /* Most inputs default to `content-box`, but `border-box` is a more useful
-       default to avoid overflowing containers. */
+    /* Most inputs default to `content-box`, but `border-box` is a more
+       useful default to avoid overflowing containers. */
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: auto;
@@ -57,17 +57,11 @@ width, control it with width-classes.
     font-style: normal;
     font-size: 1em;
     line-height: 1.2;
-
     color: inherit;
 }
 
 ._input {
     width: 100%;
-
-    border: 1px solid hsl(0, 0%, 80%);
-    border-radius: 2px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 0%, .1);
-    
     -webkit-appearance: textfield;
 }
 textarea._input {

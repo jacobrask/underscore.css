@@ -3,9 +3,7 @@
 Button styles can be applied to anything by applying the `_button` class.
 As a convention, `button` elements should be used for actions and anchors
 (`a`) for navigation. For instance, "Download" should be a `button` while
-"recent activity" should be an anchor.
- 
-IE8 might need extra styles for colors, since `hsl` is used here. */
+"recent activity" should be an anchor. */
 
 
 /** Core styles
@@ -22,7 +20,7 @@ IE8 might need extra styles for colors, since `hsl` is used here. */
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
-    padding: .4em 1em;
+    padding: 0.4em 1em;
     vertical-align: middle;
     white-space: nowrap;
 
@@ -31,13 +29,6 @@ IE8 might need extra styles for colors, since `hsl` is used here. */
     line-height: 1.2;
     text-align: center;
     text-decoration: none;
-
-    color: hsla(0, 0%, 0%, .75);
-    background: hsl(0, 0%, 90%);
-    border: 1px solid hsl(0, 0%, 80%);
-    text-shadow: 1px 1px 0 hsla(0, 0%, 100%, .5);
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, .5);
-    border-radius: 2px;
     cursor: pointer;
 }
 /* Remove inner padding and border from buttons in Firefox 4+. */
@@ -61,39 +52,42 @@ IE8 might need extra styles for colors, since `hsl` is used here. */
 ._button:hover {
     text-decoration: none;
     outline: 0;
-    box-shadow: none;
 }
-._button.is-disabled,
+._button._is-disabled,
 ._button[disabled] {
-    box-shadow: none;
     cursor: default;
-    opacity: .75;
+    opacity: 0.75;
 }
 
 
 /**  Sizes
 --------------------------------------------------------------------------
 
-    <button class="_button _button--xsmall">Smallest</button>
-    <button class="_button _button--small">Small</button>
+    <button class="_button _button-xsmall">Smallest</button>
+    <button class="_button _button-small">Small</button>
     <button class="_button">Default</button>
-    <button class="_button _button--large">Large</button>
-    <button class="_button _button--xlarge">Largest</button>
+    <button class="_button _button-large">Large</button>
+    <button class="_button _button-xlarge">Largest</button>
 */
 
-._button--xlarge {
-    padding-top: .3em;
-    padding-bottom: .3em;
+._button-xl {
+    /* slightly less padding to reduce height */
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
     font-size: 1.2em;
 }
-._button--large {
+._button-l {
     font-size: 1.0em;
 }
-._button--small {
+/* Default */
+._button-m {
+    font-size: 0.9em;
+}
+._button-s {
     font-size: 0.72em;
     font-weight: bold;
 }
-._button--xsmall {
+._button-xs {
     font-size: 0.6em;
     font-weight: bold;
     text-transform: uppercase;
