@@ -69,14 +69,15 @@ Set default styles in IE 8/9 and other older browsers. */
 ------------------------------------------------------------------------ */
 
 ._ img {
-    /* Remove border when inside `a` element in IE 8/9. */
     border: 0;
-    /* Avoid horizontal scrollbars from wide images. Beware of
-       [disappearing images in IE 8](http://www.456bereastreet.com/archive/201202/using_max-width_on_images_can_make_them_disappear_in_ie8/). */
     max-width: 100%;
+    height: auto;
+    /* Fix for [disappearing images in IE 8](http://www.456bereastreet.com/archive/201202/using_max-width_on_images_can_make_them_disappear_in_ie8/). */
+    width: auto\9;
     /* Remove the gap between images and their container. */
     vertical-align: middle;
 }
+
 ._ svg:not(:root) {
     /* overflow displayed oddly in IE 9. */
     overflow: hidden;
