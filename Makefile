@@ -12,4 +12,6 @@ underscore.css: src/
 	@echo '\n\n' >> underscore.css;
 	@cat src/buttons.css >> underscore.css
 	@echo '\n\n' >> underscore.css;
+	@cat src/embed.css >> underscore.css
+	@echo '\n\n' >> underscore.css;
 	@cat src/forms.css >> underscore.css
