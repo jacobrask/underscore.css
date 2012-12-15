@@ -5,35 +5,63 @@ sometimes you cannot determine semantics (such as with WYSIWYG output),
 sometimes there are no suitable elements, and sometimes it's just not
 convenient. */
 
+/*    <span class="_b _i _s">Lots of styling</span> */
 ._text-bold,   ._b { font-weight: bold; }
 ._text-italic, ._i { font-style: italic; }
 ._text-strike, ._s { text-decoration: line-through; }
-/* Equivalent of `._ code', `._ kbd`, `._ samp` and `._ var`. */
+
+/*
+    <span class="_tt">Equivalent to <code>._ code/kbd/samp/var</code></span>
+*/
 ._text-mono, ._tt {
     font-style: monospace;
     font-size: 0.9em;
 }
 
+/*
+    <p class="_text-upper">
+      Easy text <span class="_text-lower">case</span> change.
+    </p>
+*/
 ._text-upper { text-transform: uppercase; }
 ._text-lower { text-transform: lowercase; }
 
+/* <b><i><span class="_text-normal">Reset it all</span></i></b> */
+._text-normal {
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none;
+    text-decoration: none;
+}
 
 /* Instead of abusing default heading sizes, use semantic HTML and apply a
 size class to it. These sizes follow a 1:1.25 ratio (skipping some steps).
-*/
-._size-xxl { font-size: 2.441em; }
-._size-xl  { font-size: 1.953em; }
-._size-l   { font-size: 1.25em;  }
-._size-m   { font-size: 1em;     }
-._size-s   { font-size: 0.8em;   }
-._size-xs  { font-size: 0.64em;  }
 
+    <h1 class="_text-xxl">Super Size Me</h1>
+    <h1 class="_text-xl">Pretty big now&hellip;</h1>
+    <h1 class="_text-l">Slightly bigger</h1>
+    <h1 class="_text-m">Default font size</h1>
+    <h1 class="_text-s">Small text</h1>
+    <h1 class="_text-xs">Legal text you don't want anyone to see</h1>
+*/
+._text-xxl { font-size: 2.441em; }
+._text-xl  { font-size: 1.953em; }
+._text-l   { font-size: 1.25em;  }
+._text-m   { font-size: 1em;     }
+._text-s   { font-size: 0.8em;   }
+._text-xs  { font-size: 0.64em;  }
+
+/*
+    <b class="_muted">Lower the opacity</b>
+    <b class="_muted-strong">a lot</b>
+    <b class="_muted-subtle">or just a bit</b>.
+*/
 ._muted-strong { opacity: 0.6;  }
 ._muted        { opacity: 0.75; }
 ._muted-subtle { opacity: 0.9;  }
 
 
-/* Equivalent of `._ pre` */
+/* Equivalent to `._ pre` */
 ._pre {
     font-family: monospace;
     white-space: pre;
@@ -47,15 +75,24 @@ size class to it. These sizes follow a 1:1.25 ratio (skipping some steps).
 /* Text-alignment. See equivalent classes for non-text alignment in the
 layout component. */
 ._text-center { text-align: center; }
-._text-left   { text-align: left; }
-._text-right  { text-align: right; }
+._text-left   { text-align: left;   }
+._text-right  { text-align: right;  }
+
+._text-middle { vertical-align: middle; }
+._text-top    { vertical-align: top;    }
+._text-bottom { vertical-align: bottom; }
 
 
 /* Prevent text from wrapping onto multiple lines, and truncate with an
-ellipsis. */
-._truncate {
+ellipsis.
+
+    <h1 class="_text-truncate" style="max-width:50%">
+      A piece of text that we never want to see span over several lines
+    </h1>
+*/
+._text-truncate {
     max-width: 100%;
-    /* Make sure that max-width really is 100% */
+    /* Disregard padding for max-width calucation */
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     overflow: hidden;

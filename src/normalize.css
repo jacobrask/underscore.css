@@ -75,7 +75,7 @@ Set default styles in IE 8/9 and other older browsers. */
     height: auto;
     /* Fix for [disappearing images in IE 8](http://www.456bereastreet.com/archive/201202/using_max-width_on_images_can_make_them_disappear_in_ie8/). */
     width: auto\9;
-    /* Remove the gap between images and their container. */
+    /* Remove the gap between image and container. */
     vertical-align: middle;
 }
 
